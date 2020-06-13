@@ -1,5 +1,5 @@
 # Attendee_page
-One page application using node v12.x currently showing percentage of raised hands. Also using session id to keep track of active users
+One page application using node v12.x currently showing percentage of raised hands. Also using session id to keep track of active users. application is linked to redis v3.2 database
 
 packages used with their versions
 
@@ -20,4 +20,5 @@ packages used with their versions
 "socket.io": "^2.3.0",
 
 "update": "^0.7.4"
+
 
