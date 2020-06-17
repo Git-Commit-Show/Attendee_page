@@ -20,6 +20,10 @@ let users = [];
 client.set("HandsRaised",0);
 
 io.on("connection", socket => {
+
+
+  socket.emit("pageOpened",users[0]);
+
   socket.on("raise-hand", function() {
     client.incr("HandsRaised");
     status();
@@ -47,8 +51,10 @@ app.listen(3000,function(){
 });
 
 app.get("/", function(req, res) {
-  res.render("home.ejs");
   const id = req.sessionID;
+
+  res.render("home.ejs");
+
   if (users.indexOf(id) == -1) {
     users.unshift(id);
     client.lpush(["UsersId",id]);

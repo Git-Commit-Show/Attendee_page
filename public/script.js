@@ -1,5 +1,6 @@
 const socket = io("http://localhost:8080");
 
+
 var hand = document.querySelector("#hand");
 var submit = document.querySelector("#submit");
 hand.addEventListener("submit", function(e) {
@@ -15,4 +16,9 @@ submit.addEventListener("click", function() {
     submit.innerText = "Raise Hand";
     socket.emit("hand-raised");
   }
+});
+
+
+socket.on("pageOpened",function(id){
+  console.log("session id = " +id);
 });
